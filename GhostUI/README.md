@@ -1,4 +1,4 @@
-#The source code is not originally mine. I got it from https://github.com/based-ghost/aspnet-core-vue-vuex-playground-template. I used it as a starting point to learn more about React-Redux in AspNetCore 7 and other new frameworks, packages, libraries and languages like GraphQL.
+# The source code is not originally mine. I got it from https://github.com/based-ghost/aspnet-core-vue-vuex-playground-template. I used it as a starting point to learn more about React-Redux in AspNetCore 7 and other new frameworks, packages, libraries and languages like GraphQL.
 
 For example, I've added this Grid component that implements CRUD functions using graphql.
 ![image](https://user-images.githubusercontent.com/13359515/226170970-4ddd7e57-9fb8-40fd-9a66-cd315068e10d.png)
