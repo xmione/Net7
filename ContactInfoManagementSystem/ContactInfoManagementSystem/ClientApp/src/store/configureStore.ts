@@ -1,20 +1,29 @@
-import authReducer from './authSlice';
-import formReducer from './formSlice';
-import weatherReducer from './weatherSlice';
-import contactReducer from './contactInfoSlice';
-import { configureStore } from '@reduxjs/toolkit'
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
+import thunk from 'redux-thunk';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
+import { History } from 'history';
+import { ApplicationState, reducers } from './';
 
-export const store = configureStore({
-  reducer: {
-    auth: authReducer,
-    form: formReducer,
-    weather: weatherReducer,
-    contact: contactReducer
-  }
-});
+export default function configureStore(history: History, initialState?: ApplicationState) {
+    const middleware = [
+        thunk,
+        routerMiddleware(history)
+    ];
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>;
+    const rootReducer = combineReducers({
+        ...reducers,
+        router: connectRouter(history)
+    });
 
-// Inferred type: {auth: AuthState, form: FormState, weather: WeatherState}
-export type AppDispatch = typeof store.dispatch;
+    const enhancers = [];
+    const windowIfDefined = typeof window === 'undefined' ? null : window as any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    if (windowIfDefined && windowIfDefined.__REDUX_DEVTOOLS_EXTENSION__) {
+        enhancers.push(windowIfDefined.__REDUX_DEVTOOLS_EXTENSION__());
+    }
+
+    return createStore(
+        rootReducer,
+        initialState,
+        compose(applyMiddleware(...middleware), ...enhancers)
+    );
+}
