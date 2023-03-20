@@ -1,3 +1,9 @@
+## The source code is not originally mine. I got it from https://github.com/based-ghost/aspnet-core-vue-vuex-playground-template. I used it as a starting point to learn more about React-Redux in AspNetCore 7 and other new frameworks, packages, libraries and languages like GraphQL.
+
+For example, I've added this Grid component that implements CRUD functions using graphql.
+![image](https://user-images.githubusercontent.com/13359515/226170970-4ddd7e57-9fb8-40fd-9a66-cd315068e10d.png)
+
+
 # ASP.NET Core 7.0 + React + Redux + TypeScript + Hot Module Replacement (HMR)
 This template is a SPA application built using ASP.NET Core 7.0 as the REST API server and React/Redux/TypeScript as the web client (Bulma + SASS + styled-components for UI styling). You can find a similar version using Vue + Vuex (and associated libraries) here: [aspnet-core-vue-vuex-playground-template](https://github.com/based-ghost/aspnet-core-vue-vuex-playground-template)
 
