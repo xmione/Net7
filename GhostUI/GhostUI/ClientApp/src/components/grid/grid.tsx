@@ -197,7 +197,7 @@ const DisplayGrid = (props: any) => {
         return (
             <Box
                 sx={{
-                    height: 500,
+                    height: 1000,
                     width: '100%',
                     '& .actions': {
                         color: 'text.secondary',
@@ -208,6 +208,10 @@ const DisplayGrid = (props: any) => {
                 }}
             >
                 <DataGridPro
+                    initialState={{
+                        pagination: { paginationModel: { pageSize: 5 } },
+                    }}
+                    pageSizeOptions={[5, 10, 25]}
                     rows={rows}
                     columns={columns}
                     editMode="row"
@@ -222,15 +226,16 @@ const DisplayGrid = (props: any) => {
                     slotProps={{
                         toolbar: { setRows, setRowModesModel },
                     }}
+                    
                 />
             </Box>
         );
     }
 
     return (
-        <div style={{ height: 800, width: '100%' }}>
+        
             <FullFeaturedCrudGrid />
-        </div>
+        
     );
   }
 
