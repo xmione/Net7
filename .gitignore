@@ -8,3 +8,6 @@
 /ContactInfoManagementSystem/ContactInfoManagementSystem/obj
 /ContactInfoManagementSystem/ContactInfoManagementSystem/ClientApp/node_modules
 /ContactInfoManagementSystem/ContactInfoManagementSystem/node_modules
+/demo/.vs/demo
+/demo/App/bin/Debug/net6.0
+/demo/App/obj
